@@ -20,7 +20,6 @@ Website Artikel dan Jurnal adalah platform berbasis web yang memungkinkan penggu
 
 - **Backend**:
 
-  - [Express.js](https://expressjs.com/) (jika digunakan untuk API)
   - [PHP](https://www.php.net/) untuk server-side scripting
   - [MySQL](https://www.mysql.com/) sebagai database
 
