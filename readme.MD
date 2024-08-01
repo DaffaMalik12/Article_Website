@@ -10,6 +10,7 @@ Website Artikel dan Jurnal adalah platform berbasis web yang memungkinkan penggu
 - **Detail Jurnal**: Menampilkan detail jurnal termasuk judul, abstrak, dan link untuk mengunduh PDF.
 - **Unduh Jurnal**: Tombol unduh untuk mengakses file PDF jurnal langsung dari server.
 - **Responsif**: Desain yang responsif untuk tampilan yang baik di berbagai perangkat.
+- **Fitur Komentar** Terdapat Fitur Komentar untuk Mengomentari Artikel yang telah disediakan
 
 ## Teknologi yang Digunakan
 
