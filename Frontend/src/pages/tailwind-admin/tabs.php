@@ -57,21 +57,14 @@
           <i class="fas fa-tachometer-alt mr-3"></i>
           Dashboard
         </a>
-        <a href="blank.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+        <a href="blank.php" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
           <i class="fas fa-sticky-note mr-3"></i>
-          Blank Page
+          Artikel
         </a>
-        <a href="tables.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
-          <i class="fas fa-table mr-3"></i>
-          Tables
-        </a>
-        <a href="forms.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
-          <i class="fas fa-align-left mr-3"></i>
-          Forms
-        </a>
+
         <a href="tabs.html" class="flex items-center active-nav-link text-white py-4 pl-6 nav-item">
           <i class="fas fa-tablet-alt mr-3"></i>
-          Tabbed Content
+          Jurnal
         </a>
         <a href="calendar.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
           <i class="fas fa-calendar mr-3"></i>
@@ -111,21 +104,14 @@
             <i class="fas fa-tachometer-alt mr-3"></i>
             Dashboard
           </a>
-          <a href="blank.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
+          <a href="blank.php" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
             <i class="fas fa-sticky-note mr-3"></i>
-            Blank Page
+            Artikel
           </a>
-          <a href="tables.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
-            <i class="fas fa-table mr-3"></i>
-            Tables
-          </a>
-          <a href="forms.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
-            <i class="fas fa-align-left mr-3"></i>
-            Forms
-          </a>
-          <a href="tabs.html" class="flex items-center active-nav-link text-white py-2 pl-4 nav-item">
+
+          <a href="tabs.php" class="flex items-center active-nav-link text-white py-2 pl-4 nav-item">
             <i class="fas fa-tablet-alt mr-3"></i>
-            Tabbed Content
+            Jurnal
           </a>
           <a href="calendar.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
             <i class="fas fa-calendar mr-3"></i>
@@ -190,7 +176,7 @@
                         <td class="py-2 px-4 flex justify-center space-x-2">
                           <a href="upload_download/DownloadFile.php?url=<?php echo $row['berkas']; ?>" class="inline-flex items-center justify-center px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Download</a>
                           <a href="upload_download/delete.php?id=<?php echo $row['id']; ?>" class="inline-flex items-center justify-center px-4 py-2 bg-red-500 hover:bg-red-700 text-white text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">Hapus</a>
-                        </td> 
+                        </td>
                       </tr>
                   <?php
                     }
