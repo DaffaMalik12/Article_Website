@@ -1,5 +1,21 @@
 <?php
-require '../../../../Backend/config.php'
+require '../../../../Backend/config.php';
+// Ambil ID dari URL, dengan default 0 jika tidak ada
+$id = isset($_GET["id"]) ? intval($_GET["id"]) : 0;
+
+// Ambil data dari database berdasarkan ID
+if ($id > 0) {
+    $sql = "SELECT title FROM articles WHERE id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $title = $row["title"];
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -7,7 +23,8 @@ require '../../../../Backend/config.php'
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Articles</title>
+    <title> <?php echo htmlspecialchars($title, ENT_QUOTES, 'UTF-8') ?>
+    </title>
     <meta name="author" content="David Grzyb">
     <meta name="description" content="">
 
@@ -79,7 +96,7 @@ require '../../../../Backend/config.php'
     ?>
             <header class="w-full container flex items-center justify-center">
                 <div class="flex flex-col items-center py-12">
-                    <a class="font-bold text-gray-800 uppercase hover:text-gray-700 text-5xl" href="#">
+                    <a class="font-bold text-gray-800 uppercase hover:text-gray-700 text-4xl text-justify" href="#">
                         <?php echo htmlspecialchars($title, ENT_QUOTES, 'UTF-8') ?>
                     </a>
 
@@ -114,7 +131,7 @@ require '../../../../Backend/config.php'
                         ?>
                                 <!-- Article Image -->
                                 <a href="#" class="hover:opacity-75">
-                                    <img src="../tailwind-admin/crud/upload/<?php echo $row["image"] ?>" class="w-full">
+                                    <img src="../tailwind-admin/crud/upload/<?php echo $row["image"] ?>" class="w-full h-96">
                                 </a>
                                 <div class="bg-white flex flex-col justify-start p-6">
                                     <a href="#" class="text-3xl font-bold hover:text-gray-700 pb-4"><?php echo htmlspecialchars($title, ENT_QUOTES, 'UTF-8') ?></a>

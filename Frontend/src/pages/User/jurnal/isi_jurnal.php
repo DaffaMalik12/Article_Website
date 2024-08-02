@@ -76,7 +76,7 @@ $conn->close();
             <!-- Main Content -->
             <div class="col-span-2">
                 <div class="pembungkus">
-                    <h1 class="mb-5 text-5xl font-bold text-black"><?php echo htmlspecialchars($row['judul']); ?></h1>
+                    <h1 class="mb-5 text-5xl font-bold text-black ml-2"><?php echo htmlspecialchars($row['judul']); ?></h1>
                     <h2 class="text-lg text-black ml-2">Abstrak</h2>
                     <p class="mb-5 text-black text-justify ml-2">
                         <?php echo nl2br(htmlspecialchars($row['abstrak'])); ?>
@@ -85,7 +85,7 @@ $conn->close();
                     <a href="../../../../src/pages/tailwind-admin/upload_download/DownloadFile.php?url=<?php echo urlencode($row['berkas']); ?>" class="ml-2 btn btn-primary text-white">Download PDF</a>
                     <!-- Preview PDF -->
                     <div class="mt-5">
-                        <iframe src="../../../../src/pages/tailwind-admin/upload_download/DownloadFile.php<?php echo urlencode($row['berkas']); ?>" width="100%" height="600px"></iframe>
+                        <iframe class="ml-1" src="../../tailwind-admin/upload_download/preview.php?id=<?php echo urlencode($row['id']); ?>" width="100%" height="600px"></iframe>
                     </div>
                 </div>
             </div>
@@ -115,38 +115,12 @@ $conn->close();
                         </div>
                     </div>
                 </div>
+
             </aside>
         </div>
     </div>
 
-    <!-- <script>
-        var url = '../../../../src/pages/tailwind-admin/upload_download/DownloadFile.php?url=<?php echo urlencode($row['berkas']); ?>';
 
-        // Asynchronously download PDF as a binary blob
-        var loadingTask = pdfjsLib.getDocument(url);
-        loadingTask.promise.then(function(pdf) {
-            // Fetch the first page
-            pdf.getPage(1).then(function(page) {
-                var scale = 1.5;
-                var viewport = page.getViewport({
-                    scale: scale
-                });
-
-                // Prepare canvas using PDF page dimensions
-                var canvas = document.getElementById('pdf-canvas');
-                var context = canvas.getContext('2d');
-                canvas.height = viewport.height;
-                canvas.width = viewport.width;
-
-                // Render PDF page into canvas context
-                var renderContext = {
-                    canvasContext: context,
-                    viewport: viewport
-                };
-                page.render(renderContext);
-            });
-        });
-    </script> -->
 </body>
 
 </html>
