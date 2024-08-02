@@ -124,12 +124,18 @@
                     $result = $conn->query($sql);
 
                     if ($result->num_rows > 0) {
+                        $wordlimit = 40;
+
                         // Tampilkan artikel
                         while ($row = $result->fetch_assoc()) {
+                            // Potong abstrak jika melebihi batas kata
+                            $words = explode(" ", $row["abstrak"]);
+                            $abstrak = implode(" ", array_slice($words, 0, $wordlimit));
+
                             echo '<a href="isi_jurnal.php?id=' . htmlspecialchars($row["id"]) . '" class="block">';
                             echo '<div class="p-4 bg-white rounded-lg shadow-md mt-4">';
                             echo '<h2 class="text-xl font-semibold">' . htmlspecialchars($row["judul"]) . '</h2>';
-                            echo '<p class="mt-2 text-gray-600">' . htmlspecialchars($row["abstrak"]) . '</p>';
+                            echo '<p class="mt-2 text-gray-600">' . htmlspecialchars($abstrak) . '...</p>'; // Menambahkan '...' untuk menunjukkan bahwa teks telah dipotong
                             echo '</div>';
                             echo '</a>';
                         }
@@ -140,9 +146,6 @@
                     // Tutup koneksi
                     $conn->close();
                     ?>
-
-
-
 
 
 

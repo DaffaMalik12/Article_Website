@@ -121,7 +121,7 @@ include '../../../../Backend/config.php';
 
           if ($jmlArtikel > 0) {
             while ($row = mysqli_fetch_assoc($hasil)) {
-              $wordlimit = 20;
+              $wordlimit = 40;
               $words = explode(" ", $row["content"]);
               $artikel = implode(" ", array_slice($words, 0, $wordlimit));
               $artikel = htmlspecialchars_decode($artikel); // Decode special characters in content
